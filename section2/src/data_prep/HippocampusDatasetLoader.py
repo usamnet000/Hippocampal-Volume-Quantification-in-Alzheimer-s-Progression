@@ -39,7 +39,7 @@ def LoadHippocampusData(root_dir, y_shape, z_shape):
         label, _ = load(join(label_dir, f))
 
         # normalize all images (but not labels) so that values are in [0..1] range
-        image = image / 255.0
+        image = image / np.max(image)
 
         # reshape data since CNN tensors need to be of the same size.
         # since we feed individual slices to the CNN, we only need to extend 2 dimensions (coronal and sagittal) out of 3 
