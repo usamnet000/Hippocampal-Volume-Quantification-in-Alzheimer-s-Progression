@@ -45,11 +45,8 @@ class UNetInferenceAgent:
         # put all slices into a 3D Numpy array
 
         for ix in range(0, volume.shape[0]):
-            img = volume[idx,:,:]
-            slc = img.astype(np.single)/np.max(img)
-            slc_tensor = torch.from_numpy(slc).unsqueeze(0).unsqueeze(0).to(self.device)
-#             slice_tensor = torch.from_numpy(volume[ix,:,:].astype(np.single)).unsqueeze(0).unsqueeze(0)
-            pred = self.model(slc_tensor)
+            slice_tensor = torch.from_numpy(volume[ix,:,:].astype(np.single)).unsqueeze(0).unsqueeze(0)
+            pred = self.model(slice_tensor.to(self.device))
             mask = torch.argmax(np.squeeze(pred.cpu().detach()), dim=0)
             slices.append(mask)
         return np.dstack(slices).transpose(2, 0, 1)
