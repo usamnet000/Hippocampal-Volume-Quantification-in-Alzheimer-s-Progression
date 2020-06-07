@@ -22,8 +22,8 @@ def Dice3d(a, b):
     if a.shape != b.shape:
         raise Exception(f"Expecting inputs of the same shape, got {a.shape} and {b.shape}")
 
-    intersection = np.sum(a * b)
-    volumes = np.sum(a) + np.sum(b)
+    intersection = np.sum((a>0) * (b>0))
+    volumes = np.sum(a>0) + np.sum(b>0)
 
     if volumes == 0:
         return -1
@@ -49,8 +49,8 @@ def Jaccard3d(a, b):
     if a.shape != b.shape:
         raise Exception(f"Expecting inputs of the same shape, got {a.shape} and {b.shape}")
         
-    intersection = np.sum(a * b)
-    union = np.sum(a + b)
+    intersection = np.sum((a>0) * (b>0))
+    union = np.sum(((a>0) + (b>0))>0)
     
     if union == 0:
         return -1
