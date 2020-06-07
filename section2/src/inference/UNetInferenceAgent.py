@@ -26,20 +26,6 @@ class UNetInferenceAgent:
 
         self.model.to(device)
 
-    def single_volume_inference_unpadded(self, volume):
-        """
-        Runs inference on a single volume of arbitrary patch size,
-        padding it to the conformant size first
-
-        Arguments:
-            volume {Numpy array} -- 3D array representing the volume
-
-        Returns:
-            3D NumPy array with prediction mask
-        """
-        
-        raise NotImplementedError
-
     def single_volume_inference(self, volume):
         """
         Runs inference on a single volume of conformant patch size
@@ -52,13 +38,33 @@ class UNetInferenceAgent:
         """
         self.model.eval()
 
-        # Assuming volume is a numpy array of shape [X,Y,Z] and we need to slice X axis
+        # volume is a numpy array of shape [X,Y,Z] and I will slice X axis
         slices = []
 
-        # TASK: Write code that will create mask for each slice across the X (0th) dimension. After 
-        # that, put all slices into a 3D Numpy array. You can verify if your method is 
-        # correct by running it on one of the volumes in your training set and comparing 
-        # with the label in 3D Slicer.
-        # <YOUR CODE HERE>
+        # create mask for each slice across the X (0th) dimension. 
+        # put all slices into a 3D Numpy array
 
-        return # 
+        for ix in range(0, volume.shape[0]):
+            slice_tensor = torch.from_numpy(volume[ix,:,:].astype(np.single)).unsqueeze(0).unsqueeze(0)
+            pred = self.model(slice_tensor.to(self.device))
+            mask = torch.argmax(np.squeeze(pred.cpu().detach()), dim=0)
+            slices.append(mask)
+        return np.dstack(slices).transpose(2, 0, 1)
+
+
+    
+    def single_volume_inference_unpadded(self, volume, patch_size):
+        """
+        Runs inference on a single volume of arbitrary patch size,
+        padding it to the conformant size first
+
+        Arguments:
+            volume {Numpy array} -- 3D array representing the volume
+
+        Returns:
+            3D NumPy array with prediction mask
+        """
+        
+        volume = med_reshape(volume, (volume.shape[0], patch_size, patch_size))
+        
+        return single_volume_inference(self, volume)
