@@ -1,0 +1,212 @@
+{
+  "volume_stats": [
+    {
+      "filename": "hippocampus_265.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_068.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_077.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_050.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_195.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_231.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_046.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_130.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_319.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_287.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_329.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_363.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_094.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_141.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_199.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_087.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_101.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_326.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_245.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_292.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_165.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_352.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_026.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_108.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_305.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_251.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_276.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_044.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_345.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_368.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_322.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_023.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_052.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_343.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_215.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_351.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_249.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_393.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    },
+    {
+      "filename": "hippocampus_261.nii.gz",
+      "dice": 0.0,
+      "jaccard": 0.0
+    }
+  ],
+  "overall": {
+    "mean_dice": 0.0,
+    "mean_jaccard": 0.0
+  },
+  "config": {
+    "name": "Basic_unet",
+    "root_dir": "../data",
+    "n_epochs": 1,
+    "learning_rate": 0.0002,
+    "batch_size": 8,
+    "patch_size": 64,
+    "test_results_dir": "test_results"
+  }
+}
