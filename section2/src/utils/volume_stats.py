@@ -49,8 +49,11 @@ def Jaccard3d(a, b):
     if a.shape != b.shape:
         raise Exception(f"Expecting inputs of the same shape, got {a.shape} and {b.shape}")
         
-    intersection = np.sum((a>0) * (b>0))
-    union = np.sum(((a>0) + (b>0))>0)
+    intersection = sum([1 if (a[x, y, z] != 0 and b[x, y, z] != 0) else 0 for x in range(a.shape[0]) for y in range(a.shape[1]) for z in range(a.shape[2])])
+    union = sum([1 if (a[x, y, z] != 0 or b[x, y, z] != 0) else 0 for x in range(a.shape[0]) for y in range(a.shape[1]) for z in range(a.shape[2])])
+    
+#     intersection = np.sum((a>0) * (b>0))
+#     union = np.sum(((a>0) + (b>0))>0)
     
     if union == 0:
         return -1
