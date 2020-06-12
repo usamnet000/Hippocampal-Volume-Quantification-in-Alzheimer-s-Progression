@@ -65,7 +65,7 @@ In the 3rd section of the project, I worked with three software products for emu
 
 <img src="./readme.img/Slicer.png" width=400em>
 
-The data is located in `/data/TrainingSet` directory [here](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/tree/master/data/TrainingSet). I curated the dataset using [Final Project EDA.ipynb](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/blob/master/section1/Final%20Project%20EDA.ipynb)
+The data is located in `/data/TrainingSet` directory [here](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/tree/master/data/TrainingSet). I curated the dataset using [Final Project EDA.ipynb](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/blob/master/section1/Final%20Project%20EDA.ipynb).
 
 ### Section 2: Training a segmentation CNN
 
@@ -96,7 +96,7 @@ Specifically, I have the following software in this setup:
 
 [inference_dcm.py](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/blob/master/section3/src/inference_dcm.py) will analyze the directory of the AI server that contains the routed studies, find the right series to run the AI algorithm on, will generate report, and push it back to PACS.
 
-In real system you would architect things a bit differently. Probably, AI server would be a separate piece of software that would monitor the output of the listener, and would manage multiple AI modules, deciding which one to run, automatically. In this case, for the sake of simplicity, all code sits in one Python script that was run manually after simulating an exam via the [deploy_scripts/send_volume.sh](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/blob/master/section3/src/deploy_scripts/send_volume.sh) script - `inference_dcm.py`. It combines the functions of processing of the listener output and executing the model.
+In real system you would architect things a bit differently. Probably, AI server would be a separate piece of software that would monitor the output of the listener, and would manage multiple AI modules, deciding which one to run, automatically. In this case, for the sake of simplicity, all code sits in one Python script that was run manually after simulating an exam via the [deploy_scripts/send_volume.sh](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/blob/master/section3/src/deploy_scripts/send_volume.sh) script - [inference_dcm.py](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/blob/master/section3/src/inference_dcm.py). It combines the functions of processing of the listener output and executing the model.
 
 
-The `send_volume.sh` script needs to be run from directory `section3/src` (because it relies on relative paths). An MRI scan will be sent to the PACS and to the AI module which will compute the volume, prepare the report and push it back to the PACS so that it could be inspected in our clinical viewer. At this point, go to *[YOUR IP ADDRESS]*:3000 which brings up the OHIF viewer. 
+The [deploy_scripts/send_volume.sh](https://github.com/iDataist/Hippocampal-Volume-Quantification-in-Alzheimer-s-Progression/blob/master/section3/src/deploy_scripts/send_volume.sh) script needs to be run from directory `section3/src` (because it relies on relative paths). An MRI scan will be sent to the PACS and to the AI module which will compute the volume, prepare the report and push it back to the PACS so that it could be inspected in our clinical viewer. At this point, go to *[YOUR IP ADDRESS]*:3000 which brings up the OHIF viewer. 
